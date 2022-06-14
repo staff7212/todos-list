@@ -1,0 +1,69 @@
+
+.todos-list-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  height: 50px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid #c3c3c3;
+}
+
+.checkbox {
+  &-wrapper {
+    position: relative;
+  }
+  &-box {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 1px solid #b4b4b4;
+    cursor: pointer;
+  }
+}
+
+.task {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.todos-list-item.completed .mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 60%;
+    height: 40%;
+    width: 2px;
+    background-color: #81C4B5;
+    content: "";
+    transform: translateX(10px) rotate(-45deg);
+    transform-origin: left bottom;
+  }
+  &:after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 80%;
+    background-color: #81C4B5;
+    content: "";
+    transform: translateX(10px) rotate(-45deg);
+    transform-origin: left bottom;
+  }
+}
+
+.todos-list-item.completed .task {
+  color: #b4b4b4;
+  text-decoration: line-through;
+}
+
+.todos-list-item.completed .checkbox-box {
+  border: 1px solid #81C4B5;
+}

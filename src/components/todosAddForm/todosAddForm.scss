@@ -1,0 +1,41 @@
+.app-add-form {
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid #c3c3c3;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.wrap {
+  width: 25px;
+  height: 25px;
+}
+.arrow {
+  margin-top: 10px;
+  width: 12px;
+  height: 12px;
+  border-top: 3px solid #b4b4b4;
+  border-right: 3px solid #b4b4b4;
+  margin-left: 7px;
+  margin-right: 4px;
+  transform: rotate(135deg);
+  cursor: pointer;
+}
+
+.arrow.active {
+  border-top: 3px solid #666666;
+  border-right: 3px solid #666666;
+}
+
+.add-form {
+  input {
+    height: 30px;
+    width: 400px;
+    font-size: 24px;
+    border: none;
+    outline: none;
+  }
+}

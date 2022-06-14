@@ -1,0 +1,18 @@
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  width: 180px;
+}
+
+.btn {
+  border: 1px solid #fff;
+  padding: 5px;
+  background-color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn.active {
+  border: 1px solid rgb(197, 255, 177);
+}

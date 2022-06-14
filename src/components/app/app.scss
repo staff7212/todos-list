@@ -1,0 +1,10 @@
+.app {
+  margin: 0 auto;
+  max-width: 500px;
+  &-header {
+    color: rgb(239, 148, 255);
+    text-align: center;
+    font-size: 64px;
+    font-weight: bold;
+  }
+}
