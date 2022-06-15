@@ -1,11 +1,10 @@
 
-import {useState} from 'react';
+import {useState, memo} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import './todosAddForm.scss';
 
 const TodosAddForm = ({onAdd, hideTodosList, visibleList}) => {
-
   const [task, setTask] = useState('');
 
   const onTaskChange = (e) => {
@@ -22,6 +21,7 @@ const TodosAddForm = ({onAdd, hideTodosList, visibleList}) => {
     setTask('');
   }
 
+  console.log('form');
   return (
     <div className='app-add-form'>
       <div className='wrap' onClick={hideTodosList}>
@@ -38,4 +38,4 @@ const TodosAddForm = ({onAdd, hideTodosList, visibleList}) => {
   )
 };
 
-export default TodosAddForm;
+export default memo(TodosAddForm);

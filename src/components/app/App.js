@@ -1,5 +1,5 @@
 
-import {useState} from 'react';
+import {useState, useCallback} from 'react';
 
 import Card from '../card/Card';
 import TodosAddForm from '../todosAddForm/TodosAddForm';
@@ -13,13 +13,13 @@ function App() {
   const [filter, setFilter] = useState('all');
   const [visibleList, setVisibleList] = useState(true);
 
-  const onAddTask = (id, task) => {
+  const onAddTask = useCallback((id, task) => {
     const newTask = {id, task, completed: false};
 
     setVisibleList(true);
     setFilter('all');
     setData([...data, newTask]);
-  };
+  }, [data]);
 
   const onToggleCompleted = (id) => {
     const updateData = data.map(item => {
@@ -28,15 +28,15 @@ function App() {
     });
 
     setData(updateData);
-  }
+  };
 
-  const onUpdateFilter = (filter) => {
+  const onUpdateFilter = useCallback((filter) => {
     setVisibleList(true);
     setFilter(filter);
-  }
+  }, [])
 
-  const onFilter = (items, trigger) => {
-    switch (trigger) {
+  const onFilter = (items, filter) => {
+    switch (filter) {
       case 'all':
         return items
       case 'active':
@@ -47,20 +47,21 @@ function App() {
         return items;
     }
   }
-  let visibleData = onFilter(data, filter);
+  const visibleData = onFilter(data, filter);
 
-  const hideTodosList = () => {
+  const hideTodosList = useCallback(() => {
     setVisibleList(!visibleList);
-  };
+  }, [visibleList]);
 
-  const onDeleteCompleted = () => {
+  const onDeleteCompleted = useCallback(() => {
     const updateData = data.filter(item => !item.completed);
     
     setData(updateData);
-  };
+  }, [data]);
 
   const activeTasks = data.filter(item => !item.completed).length;
 
+  console.log('app');
   return (
     <div className="app">
       <div className="app-header">

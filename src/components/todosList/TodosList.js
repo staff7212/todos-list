@@ -15,6 +15,7 @@ const TodosList = ({data, onToggleCompleted}) => {
     )
   })
 
+  console.log('list');
   return (
     <ul>
       {elements}

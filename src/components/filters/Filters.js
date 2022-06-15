@@ -1,5 +1,6 @@
+import {memo} from 'react';
 
-import './filters.scss'
+import './filters.scss';
 
 const Filters = ({filter, onUpdateFilter}) => {
 
@@ -23,6 +24,7 @@ const Filters = ({filter, onUpdateFilter}) => {
     )
   });
 
+  console.log('filter');
   return (
     <div className="btn-group">
       {buttons}
@@ -30,4 +32,4 @@ const Filters = ({filter, onUpdateFilter}) => {
   );
 };
 
-export default Filters;
+export default memo(Filters);
