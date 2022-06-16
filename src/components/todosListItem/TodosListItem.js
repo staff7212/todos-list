@@ -5,7 +5,6 @@ const TodosListItem = ({task, completed, onToggleCompleted}) => {
 
   let clazz = completed ? 'completed' : null;
 
-  console.log('item');
   return (
     <li className={`todos-list-item ${clazz}`} onClick={onToggleCompleted}>
       <div className='checkbox-wrapper'>

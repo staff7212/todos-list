@@ -6,7 +6,6 @@ import './toolbar.scss';
 
 const Toolbar = ({activeTasks, filter, onUpdateFilter, onDeleteCompleted}) => {
 
-  console.log('bar');
   return (
     <div className='toolbar'>
       <div className='left-items'>{activeTasks} items left</div>

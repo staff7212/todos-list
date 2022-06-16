@@ -61,7 +61,6 @@ function App() {
 
   const activeTasks = data.filter(item => !item.completed).length;
 
-  console.log('app');
   return (
     <div className="app">
       <div className="app-header">

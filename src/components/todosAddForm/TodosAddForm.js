@@ -21,7 +21,6 @@ const TodosAddForm = ({onAdd, hideTodosList, visibleList}) => {
     setTask('');
   }
 
-  console.log('form');
   return (
     <div className='app-add-form'>
       <div className='wrap' onClick={hideTodosList}>

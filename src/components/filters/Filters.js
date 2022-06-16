@@ -24,7 +24,6 @@ const Filters = ({filter, onUpdateFilter}) => {
     )
   });
 
-  console.log('filter');
   return (
     <div className="btn-group">
       {buttons}
